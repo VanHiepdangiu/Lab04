@@ -21,14 +21,14 @@ namespace lab04.Controllers
                 new Account()
                 {
                     Id = 1,
-                    Name = "Hoang Anh",
-                    Email = "anh@gmail.com",
-                    Phone = "0986456789",
+                    Name = "Nguyen Van Hiep",
+                    Email = "hiep2410900035@gmail.com",
+                    Phone = "0988089376",
                     Address = "Ha Noi",
                     Avatar = Url.Content("~/Avatar/02.png"),
                     Gender = 1,
-                    Bio = "My name is small",
-                    Birthday = new DateTime(1998, 7, 15)
+                    Bio = "Sinh vien K24CNT1 - MSSV: 2410900035",
+                    Birthday = new DateTime(2006, 9, 27)
                 },
                 new Account()
                 {
