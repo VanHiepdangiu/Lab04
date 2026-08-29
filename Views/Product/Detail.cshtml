@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+@if (ViewBag.Product != null)
+{
+    var p = ViewBag.Product as lab04.Models.Product;
+    <h2>Chi tiết sản phẩm</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-5">
+            <img src="@p.Image" class="img-fluid" alt="@p.Name" style="border-radius:10px; max-height:350px; width:100%; object-fit:cover;" />
+        </div>
+        <div class="col-md-7">
+            <table class="table table-bordered">
+                <tr>
+                    <th style="width:30%;">Tên sản phẩm</th>
+                    <td>@p.Name</td>
+                </tr>
+                <tr>
+                    <th>Mô tả</th>
+                    <td>@p.Description</td>
+                </tr>
+                <tr>
+                    <th>Giá bán</th>
+                    <td class="text-danger"><strong>@p.Price.ToString("N0") ₫</strong></td>
+                </tr>
+                <tr>
+                    <th>Giá cũ</th>
+                    <td><del class="text-muted">@p.PriceOld.ToString("N0") ₫</del></td>
+                </tr>
+            </table>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-secondary">Back to list</a>
+        </div>
+    </div>
+}
+else
+{
+    <h2>Không tìm thấy sản phẩm</h2>
+    <a asp-controller="Product" asp-action="Index" class="btn btn-secondary">Back to list</a>
+}
