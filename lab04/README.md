@@ -23,6 +23,8 @@
 | 6 | Bước 11 | Menu Account dùng `asp-route="account"` | `Views/Shared/_Layout.cshtml` | — |
 | 7 | Bước 12 | Route đặt tên `ho-so-cua-toi` cho action Profile | `Controllers/AccountController.cs` | `/ho-so-cua-toi/2` |
 | 8 | Bước 15 | Profile nhận tham số `id` + LINQ `FirstOrDefault` | `Controllers/AccountController.cs` | `/Account/Profile/3` |
+| 9 | Sản phẩm — danh sách + lọc theo danh mục | `Controllers/ProductController.cs` | `/san-pham` |
+| 10 | Sản phẩm — chi tiết theo id (LINQ FirstOrDefault) | `Controllers/ProductController.cs` | `/san-pham/chi-tiet/4` |
 
 > 💡 **Dữ liệu:** account 1 là **Nguyễn Văn Hiệp — MSSV 2410900035** (SĐT 0988089376, SN 27/09/2006); account 2, 3 giữ mock data theo source thầy.
 
@@ -45,16 +47,21 @@ Mở trình duyệt: `http://localhost:5011`
 lab04/
 ├── Controllers/
 │   ├── HomeController.cs
-│   └── AccountController.cs   ← Index + Profile (LINQ)
+│   ├── AccountController.cs   ← Index + Profile (LINQ)
+│   └── ProductController.cs   ← Index (theo danh mục) + Detail (theo id)
 ├── Models/
 │   ├── Account.cs             ← 9 thuộc tính
+│   ├── Product.cs             ← sản phẩm
+│   ├── Category.cs            ← danh mục
 │   └── ErrorViewModel.cs
 ├── Views/
 │   ├── Account/Index.cshtml, Profile.cshtml
+│   ├── Product/Index.cshtml, Detail.cshtml
 │   ├── Home/Index.cshtml, Privacy.cshtml
 │   └── Shared/_Layout.cshtml
 ├── wwwroot/
 │   ├── Avatar/02.png, 03.png, 04.png
+│   ├── images/Product/p1.png → p10.png
 │   └── lib/ (bootstrap, jquery)
 ├── Program.cs                 ← 2 route: default + account
 └── lab04.csproj  (.NET 8)
