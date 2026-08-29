@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Profile";
+}
+<h1>Your Profile</h1>
+
+@if (ViewBag.account != null)
+{
+    var account = ViewBag.account as lab04.Models.Account;
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@account.Avatar" alt="Avatar" style="width:100%; border-radius:10px;" />
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Full Name</th>
+                    <td>@account.Name</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>@account.Email</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>@account.Phone</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>@account.Address</td>
+                </tr>
+                <tr>
+                    <th>Bio</th>
+                    <td>@account.Bio</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>@(account.Gender == 1 ? "Male" : "Female")</td>
+                </tr>
+                <tr>
+                    <th>Birthday</th>
+                    <td>@account.Birthday.ToString("dd/MM/yyyy")</td>
+                </tr>
+            </table>
+            <a asp-action="Index" asp-controller="Account" class="btn btn-secondary">Back to list</a>
+        </div>
+    </div>
+}
