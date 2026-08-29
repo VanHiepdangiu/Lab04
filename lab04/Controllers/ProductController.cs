@@ -10,8 +10,9 @@ using System.Linq;
 
 namespace lab04.Controllers
 {
-    // Đổi route mặc định /Product thành /san-pham
+    // Route theo lab guide: /san-pham (và dự phòng /Product cũng chạy)
     [Route("san-pham")]
+    [Route("Product")]
     public class ProductController : Controller
     {
         // Danh sách danh mục
