@@ -67,8 +67,9 @@ namespace lab04.Controllers
             return View();
         }
 
-        // Định nghĩa url và tên cho action
+        // Định nghĩa url và tên cho action (cả 2 route đều chạy)
         [Route("ho-so-cua-toi/{id?}", Name = "profile")]
+        [Route("Account/Profile/{id?}")]
         public IActionResult Profile(int id)
         {
             // Danh sách Account như trên Action Index
