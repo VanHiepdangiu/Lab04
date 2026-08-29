@@ -68,7 +68,7 @@ namespace lab04.Controllers
         }
 
         // Định nghĩa url và tên cho action
-        [Route("ho-so-cua-toi", Name = "profile")]
+        [Route("ho-so-cua-toi/{id?}", Name = "profile")]
         public IActionResult Profile(int id)
         {
             // Danh sách Account như trên Action Index
